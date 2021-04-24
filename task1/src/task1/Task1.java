@@ -35,6 +35,42 @@ public class Task1 {
    
         return TotalWords;
     }
+    
+    
+     public static int vowelcounter(String s)
+    {
+    int TotalVowels=0;
+    int len= s.length();
+    char[] wordCounter= new char[len];
+    wordCounter= s.toCharArray();
+    for(int i=0; i<len; i++)
+    {
+        if(wordCounter[i]=='a' || wordCounter[i]=='A')
+        {
+            TotalVowels++;
+        }
+        if(wordCounter[i]=='e' || wordCounter[i]=='E')
+        {
+            TotalVowels++;
+        }
+        if(wordCounter[i]=='i' || wordCounter[i]=='I')
+        {
+            TotalVowels++;
+        }
+        if(wordCounter[i]=='o' || wordCounter[i]=='O')
+        {
+            TotalVowels++;
+        }
+        if(wordCounter[i]=='u' || wordCounter[i]=='U')
+        {
+            TotalVowels++;
+        }
+        
+        
+    }
+      return TotalVowels;  
+    }
+    
    
     public static void main(String[] args) {
         // TODO code application logic here
@@ -43,8 +79,10 @@ public class Task1 {
         
         
         int totalWords= wordCounter(str);
+        int totalVowels= vowelcounter(str);
         
          System.out.println("Total words in String are: " +totalWords);
+         System.out.println("Total vowels in String are: " +totalVowels);
         
         
       
