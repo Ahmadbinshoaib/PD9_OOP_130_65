@@ -16,9 +16,36 @@ public class Task1 {
     /**
      * @param args the command line arguments
      */
+    public static int wordCounter(String s)
+    { int noOfWords=0;
+      int TotalWords=0;
+    int len= s.length();
+    char[] wordCounter= new char[len];
+    wordCounter= s.toCharArray();
+    for(int i=0; i<len; i++)
+    {
+        if(wordCounter[i]==' ')
+        {
+            noOfWords++;
+           
+            
+        }
+    }
+    TotalWords= noOfWords+1; 
+   
+        return TotalWords;
+    }
    
     public static void main(String[] args) {
         // TODO code application logic here
+        
+        String str= JOptionPane.showInputDialog("Please enter the String: ");
+        
+        
+        int totalWords= wordCounter(str);
+        
+         System.out.println("Total words in String are: " +totalWords);
+        
         
       
         
