@@ -136,7 +136,70 @@ class MyString{
      }
   }
   return flag;
-   } 
+   }
+     
+     /**
+     * This function of class MyString is used to validate individual's Email. In certain projects, it might get used. So, you just need to call the function.
+     *  It'll validate Email keeping in mind typical rules. e.g (someone@gmail.com)
+     * @param Email
+     * @return flag(true if Email entered is correct else false) 
+     */    
+     
+      public  boolean ValidateEmail(String Email){
+        boolean test=true;
+        int index = 0;
+        char[] ch = new char[Email.length()];
+        
+        if (ch[0] == '@') {
+            test= false;
+        } else {
+            for (int i = 1; i < Email.length(); i++) {
+                if (ch[i] == '@') {
+                    index = i;
+                    break;
+                }
+            }
+            if (ch[index] == '.') {
+               test = false;
+            }
+        }
+        if (test== true) {
+            
+            return true;
+            
+        } else {
+           return false;
+
+        }
+}
+      
+      
+    public  static boolean isCheckUppLow(String str)
+    {
+  
+     int len = str.length();
+     String lowerStr = "", upperStr = "";
+  
+     char[] str1 = str.toCharArray();
+     // Traverse the string
+     for (int i = 0; i < len; i++) {
+  
+         // Store both lowercase and uppercase
+         // in two different strings
+           
+         if ((int)(str1[i]) >= 65 && (int)str1[i] <= 91)
+             upperStr = upperStr + str1[i];
+  
+         else
+             lowerStr = lowerStr + str1[i];
+     }
+  
+     // transform lowerStr1 to upper
+     String transformStr = lowerStr.toUpperCase();
+       
+     return(transformStr.equals(upperStr));
+  
+    }
    
     
     
@@ -157,7 +220,7 @@ public class Task4 {
         String choose;
         char chose;
         do{
-        choose= JOptionPane.showInputDialog("Choose the following option: \n Choose 1 to count Uppercase characters in a String  \n Choose 2 to count Lowercase characters in a String  \n Choose 3 to count Numbers in a String  \n Choose 4 to count Special Characters in a String \n Choose 5 to validate CNIC  \n Choose 6 to view GPA \n Choose 7 to view detailed marks certificate \n Choose 8 to save data \n Choose 0 to exit" );
+        choose= JOptionPane.showInputDialog("Choose the following option: \n Choose 1 to count Uppercase characters in a String  \n Choose 2 to count Lowercase characters in a String  \n Choose 3 to count Numbers in a String  \n Choose 4 to count Special Characters in a String \n Choose 5 to validate CNIC  \n Choose 6 to validate Email \n Choose 7 to Check if lowercase and uppercase characters are in same order \n Choose 0 to exit" );
         chose=choose.charAt(0);
     
     switch(chose)
@@ -202,7 +265,7 @@ public class Task4 {
       }
       case '5':
       {
-         String z= JOptionPane.showInputDialog("Ënter CNIC to validate it");
+        String z= JOptionPane.showInputDialog("Ënter CNIC to validate it");
         
         if(w.ValidateCNIC(z)){
         JOptionPane.showMessageDialog(null, "CNIC is correct");
@@ -211,10 +274,36 @@ public class Task4 {
         {
          JOptionPane.showMessageDialog(null, "CNIC is incorrect");   
         }
-          
+        break; 
       }
       case '6':
+      {
+        String z= JOptionPane.showInputDialog("Ënter E-mail to validate it");
+        
+        if(w.ValidateEmail(z)){
+        JOptionPane.showMessageDialog(null, "Email is correct");
+        }
+        else
+        {
+         JOptionPane.showMessageDialog(null, "Email is incorrect");   
+        }
+        break; 
+          
+      }
       case '7':
+      {
+          String z= JOptionPane.showInputDialog("Ënter String to Check if lowercase and uppercase characters are in same order");
+        
+        if(w.isCheckUppLow(z)){
+        JOptionPane.showMessageDialog(null, "Same Order");
+        }
+        else
+        {
+         JOptionPane.showMessageDialog(null, "Not Same Order");   
+        }
+          
+          
+      }
     }
         }while(chose!='0');
         
