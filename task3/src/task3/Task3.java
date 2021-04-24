@@ -17,7 +17,12 @@ public class Task3 {
         String newString = "";
         String[] toks = s.split(" ");
         for (int i = 0; i < toks.length; i++) {
-            newString = newString + toks[i] + " ";
+            if (toks[i].equals("")) {
+
+            } else {
+
+                newString = newString + toks[i] + " ";
+            }
 
         }
 
@@ -42,49 +47,50 @@ public class Task3 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-       String menu = "Select the Following Option :\n"+"1. For RidMultipleBlanks \n"+
-                     "2. For RemoveTnteger\n"+"3. For stringEncryption\n"+
-                     "0. For Exit\n"+"Enter option ";
-      Scanner input = new Scanner(System.in);
-      String option = "" ;
-      do{
-      System.out.print(menu);
-      option = input.next();
-           switch (option) {
-               case "1":
-                   {
-                       System.out.println("---------------RidMultipleBlanks--------------\n\n");
-                       System.out.println("Input String :");
-                       String line = input.nextLine();
-                       System.out.println(ridMultipleBlanks(line));
-                       break;
-                   }
-               case "2":
-                   {
-                       System.out.println("---------------RemoveInteger--------------\n\n");
-                       System.out.println("Input String :");
-                       String line = input.nextLine();
-                       System.out.println(removeInteger(line));
-                       break;
-                   }
-               case "3":
-                   {
-                       System.out.println("---------------stringEncryption--------------\n\n");
-                       System.out.println("Input String :");
-                       String line = input.nextLine();
-                       System.out.println(ridMultipleBlanks(line));
-                       break;
-                   }
-               case "0":
-                   break;
-               default:
-                   System.out.print("\n Invalid Option \n");
-                   break;
-           }
-      }while(!option.equals("0"));
-      
-       
-       
+        String menu = "Select the Following Option :\n" + "1. For RidMultipleBlanks \n"
+                + "2. For RemoveTnteger\n" + "3. For stringEncryption\n"
+                + "0. For Exit\n" + "Enter option ";
+        Scanner input = new Scanner(System.in);
+        String option;
+        do {
+            System.out.print(menu);
+            option = input.next();
+            switch (option) {
+                case "1": {
+                    System.out.println("---------------RidMultipleBlanks--------------");
+                    System.out.println("Input String :");
+                    Scanner s = new Scanner(System.in);
+                    String line = s.nextLine();
+                    System.out.println(ridMultipleBlanks(line));
+                    System.out.println();
+                    break;
+                }
+                case "2": {
+                    System.out.println("---------------RemoveInteger--------------");
+                    System.out.println("Input String :");
+                    Scanner s = new Scanner(System.in);
+                    String line = s.nextLine();
+                    System.out.println(removeInteger(line));
+                    System.out.println();
+                    break;
+                }
+                case "3": {
+                    /* System.out.println("---------------stringEncryption--------------");
+                    System.out.println("Input String :");
+                    Scanner s = new Scanner(System.in);
+                    String line = s.nextLine();
+                    System.out.println(ridMultipleBlanks(line));
+                    System.out.println();*/
+                    break;
+                }
+                case "0":
+                    break;
+                default:
+                    System.out.print("\n Invalid Option \n");
+                    break;
+            }
+        } while (!option.equals("0"));
+
     }
 
 }
