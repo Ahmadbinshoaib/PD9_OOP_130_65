@@ -70,6 +70,36 @@ public class Task1 {
     }
       return TotalVowels;  
     }
+     
+     public static int puncCounter(String s)
+    {
+    int TotalPunc=0;
+    int len= s.length();
+    char[] wordCounter= new char[len];
+    wordCounter= s.toCharArray();
+    for(int i=0; i<len; i++)
+    {
+        if(wordCounter[i]=='.' )
+        {
+            TotalPunc++;
+        }
+        if(wordCounter[i]==',')
+        {
+            TotalPunc++;
+        }
+        if(wordCounter[i]==':')
+        {
+            TotalPunc++;
+        }
+        if(wordCounter[i]=='?')
+        {
+            TotalPunc++;
+        }
+       
+        
+    }
+      return TotalPunc;  
+    }
     
    
     public static void main(String[] args) {
@@ -80,9 +110,11 @@ public class Task1 {
         
         int totalWords= wordCounter(str);
         int totalVowels= vowelcounter(str);
+        int TotalPunc= puncCounter(str);
         
          System.out.println("Total words in String are: " +totalWords);
          System.out.println("Total vowels in String are: " +totalVowels);
+         System.out.println("Total Punctuation Marks in String are: " +TotalPunc);
         
         
       
