@@ -35,7 +35,12 @@ class MyString{
  return upper;       
 }
     
-    
+   
+     /**
+     * This function of class MyString is used to return Total Lowercase characters in a String. In certain projects, it might get used. So, you just need to call the function.
+     * @param s
+     * @return lower (Total Lowercase characters)
+     */ 
    public static int countLowercase(String s){
     int lower=0;    
     int len= s.length();
@@ -50,7 +55,89 @@ class MyString{
         }
      
  return lower;       
-}  
+} 
+   
+  
+     /**
+     * This function of class MyString is used to return Total Numbers in a String. In certain projects, it might get used. So, you just need to call the function.
+     * @param s
+     * @return numbers (Total Numbers)
+     */ 
+   public static int countNumbers(String s){
+    int numbers=0;    
+    int len= s.length();
+    char[] wordCounter= new char[len];
+    wordCounter= s.toCharArray(); 
+    for(int i = 0; i < s.length(); i++)
+        {
+            if ( wordCounter[i]>= '0' && wordCounter[i] <= '9')
+            {
+                numbers++;
+            }
+        }
+     
+ return numbers;       
+} 
+    /**
+     * This function of class MyString is used to return Total Special Characters in a String. In certain projects, it might get used. So, you just need to call the function.
+     * @param s
+     * @return special (Total Special Characters)
+     */ 
+   
+   public static int countSpecialCharacters(String s){
+    int special=0;    
+    int len= s.length();
+    char[] wordCounter= new char[len];
+    wordCounter= s.toCharArray(); 
+    for(int i = 0; i < s.length(); i++)
+        {
+            if ( !(wordCounter[i]>= '0' && wordCounter[i] <= '9'))
+            {
+                if(!( wordCounter[i]>= 'a' && wordCounter[i] <= 'z'))    
+                {
+                    if(!( wordCounter[i]>= 'A' && wordCounter[i] <= 'Z'))
+                    {
+                     special++; 
+                    }
+                 }
+                
+            }
+        }
+     
+ return special;       
+} 
+   
+   
+   /**
+     * This function of class MyString is used to validate individual's CNIC. In certain projects, it might get used. So, you just need to call the function.
+     *  It'll validate CNIC keeping in mind typical rules, Can contain only numbers of not more than 13 number. Alphabets or special characters are not allowed.
+     * @param CNIC
+     * @return flag(true if CNIC entered is correct else false) 
+     */
+    
+    
+     public boolean ValidateCNIC(String CNIC) {
+     boolean flag= false;
+     int count=0;
+     int len= CNIC.length();
+     char [] aCNIC= new char [len];
+     aCNIC= CNIC.toCharArray();
+     if(len==13)
+      {
+      if(aCNIC[0]>='0' && aCNIC[0]<='9' && aCNIC[1]>='0' && aCNIC[1]<='9' && aCNIC[2]>='0' && aCNIC[2]<='9' && aCNIC[3]>='0' && aCNIC[3]<='9' && aCNIC[4]>='0' && aCNIC[4]<='9' && aCNIC[5]>='0' && aCNIC[5]<='9' && aCNIC[6]>='0' && aCNIC[6]<='9' && aCNIC[7]>='0' && aCNIC[7]<='9' && aCNIC[8]>='0' && aCNIC[8]<='9' && aCNIC[9]>='0' && aCNIC[9]<='9' && aCNIC[10]>='0' && aCNIC[10]<='9' && aCNIC[11]>='0' && aCNIC[11]<='9' && aCNIC[12]>='0' && aCNIC[12]<='9'  )
+      {
+        count= count+1;
+      }
+      
+     
+     if(count==1)
+     {
+         flag=true;
+     }
+  }
+  return flag;
+   } 
+   
     
     
 }
@@ -62,12 +149,76 @@ public class Task4 {
     public static void main(String[] args) {
         // TODO code application logic here
         MyString w= new MyString();
-        String a= JOptionPane.showInputDialog("Ënter String");
-        int b= w.countUppercase(a);
-        System.out.println(b);
+       
         
-        int c= w.countLowercase(a);
-        System.out.println(c);
+       // int c= w.countLowercase(a);
+        //System.out.println(c);
+        
+        String choose;
+        char chose;
+        do{
+        choose= JOptionPane.showInputDialog("Choose the following option: \n Choose 1 to count Uppercase characters in a String  \n Choose 2 to count Lowercase characters in a String  \n Choose 3 to count Numbers in a String  \n Choose 4 to count Special Characters in a String \n Choose 5 to validate CNIC  \n Choose 6 to view GPA \n Choose 7 to view detailed marks certificate \n Choose 8 to save data \n Choose 0 to exit" );
+        chose=choose.charAt(0);
+    
+    switch(chose)
+    { 
+      case '1':
+      {
+        String z= JOptionPane.showInputDialog("Ënter String to count Uppercase");
+        
+        int b= w.countUppercase(z);
+        JOptionPane.showMessageDialog(null, "Total Uppercase Characters are: " + b );
+        //System.out.println("Total Uppercase Characters are: " + b);
+        break;  
+      }
+          
+      case '2':
+      {
+        String z= JOptionPane.showInputDialog("Ënter String to count Lowercase");
+        
+        int b= w.countLowercase(z);
+        JOptionPane.showMessageDialog(null, "Total Lowercase Characters are: " + b );
+        //System.out.println("Total Lowercase Characters are: " + b);
+        break;  
+      }
+      case '3':
+      {
+        String z= JOptionPane.showInputDialog("Ënter String to count Numbers");
+        
+        int b= w.countNumbers(z);
+        JOptionPane.showMessageDialog(null, "Total Numbers are : " + b );
+        //System.out.println("Total Numbers are: " + b);
+       break;   
+      }
+      case '4': 
+      {
+          String z= JOptionPane.showInputDialog("Ënter String to count Special Characters");
+        
+        int b= w.countSpecialCharacters(z);
+        JOptionPane.showMessageDialog(null, "Total Special Characters are are : " + b );
+        //System.out.println("Total Numbers are: " + b);
+       break;   
+          
+      }
+      case '5':
+      {
+         String z= JOptionPane.showInputDialog("Ënter CNIC to validate it");
+        
+        if(w.ValidateCNIC(z)){
+        JOptionPane.showMessageDialog(null, "CNIC is correct");
+        }
+        else
+        {
+         JOptionPane.showMessageDialog(null, "CNIC is incorrect");   
+        }
+          
+      }
+      case '6':
+      case '7':
+    }
+        }while(chose!='0');
+        
+        
         
         
     }
