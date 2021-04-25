@@ -13,10 +13,7 @@ import java.util.Scanner;
  */
 public class Task2 {
 
-    /**
-     * @param args the command line arguments
-     */
-     public static String displayVertical(String s) {
+	   public static String displayVertical(String s) {
         String vertical_String = "";
         for (int i = 0; i < s.length(); i++) {
             if(s.charAt(i) == ' '){
@@ -28,6 +25,10 @@ public class Task2 {
         }
         return vertical_String;
     }
+    /**
+     * @param args the command line arguments
+     */
+  
     public static void main(String[] args) {
         // TODO code application logic here
         Scanner input = new Scanner(System.in);
