@@ -75,8 +75,8 @@ public class Task3 {
                     break;
                 }
                 case "3": {
-                    /* System.out.println("---------------stringEncryption--------------");
-                    System.out.println("Input String :");
+                    System.out.println("---------------stringEncryption--------------");
+                    /*System.out.println("Input String :");
                     Scanner s = new Scanner(System.in);
                     String line = s.nextLine();
                     System.out.println(ridMultipleBlanks(line));
